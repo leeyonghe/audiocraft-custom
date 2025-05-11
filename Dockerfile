@@ -1,6 +1,7 @@
 FROM pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
 
-WORKDIR /workspace  # 작업 디렉토리 설정
+# 작업 디렉토리 설정
+WORKDIR /workspace
 
 # 시스템 의존성 설치
 ENV DEBIAN_FRONTEND=noninteractive
