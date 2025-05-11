@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   audiocraft:
     tty: true
@@ -20,4 +18,5 @@ services:
               count: 1
               capabilities: [gpu]
     environment:
+      - HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}
       - NVIDIA_VISIBLE_DEVICES=all  # 모든 GPU 사용 가능하도록 설정

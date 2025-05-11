@@ -36,10 +36,7 @@ wheels/
 
 # docs
 /api_docs
-
-# dotenv
 .env
-.envrc
 
 # virtualenv
 .venv

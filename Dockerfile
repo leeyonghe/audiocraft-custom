@@ -26,6 +26,7 @@ RUN pip install -e .
 
 # 환경 변수 설정
 ENV PYTHONPATH=/workspace
+ENV HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}
 
 # FastAPI 서버 포트 노출
 EXPOSE 8000
