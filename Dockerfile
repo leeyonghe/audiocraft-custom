@@ -21,11 +21,11 @@ COPY requirements.txt .
 # Python 의존성 설치
 RUN pip install --no-cache-dir -r requirements.txt
 
-# audiocraft 패키지 설치
-RUN pip install -e .
-
 # 애플리케이션 파일 복사
 COPY . .
+
+# audiocraft 패키지 설치
+RUN pip install -e .
 
 # 환경 변수 설정
 ENV PYTHONPATH=/workspace 
