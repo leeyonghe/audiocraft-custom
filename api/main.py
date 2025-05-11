@@ -44,7 +44,7 @@ app.add_middleware(
 # 모델 초기화
 models = {
     "musicgen": MusicGen.get_pretrained("facebook/musicgen-small"),
-    "audiogen": AudioGen.get_pretrained("facebook/audiogen-base"),
+    "audiogen": AudioGen.get_pretrained("facebook/audiogen-medium"),
     "encodec": EncodecModel.get_pretrained("facebook/encodec_24khz"),
     "multiband": MultiBandDiffusion.get_pretrained("facebook/multiband-diffusion")
 }
