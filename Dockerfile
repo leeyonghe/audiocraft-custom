@@ -25,4 +25,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install -e .
 
 # 환경 변수 설정
-ENV PYTHONPATH=/workspace 
+ENV PYTHONPATH=/workspace
+
+# FastAPI 서버 포트 노출
+EXPOSE 8000
+
+# FastAPI 서버 실행
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"] 
