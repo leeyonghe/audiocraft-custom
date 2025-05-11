@@ -9,8 +9,9 @@ services:
     volumes:
       - .:/workspace  # 현재 디렉토리를 컨테이너의 /workspace에 마운트
       - ./dataset:/workspace/dataset  # 데이터셋 디렉토리 마운트
+      - ./api:/workspace/api  # API 디렉토리 마운트
     ports:
-      - "7860:7860"  # Gradio 기본 포트
+      - "8000:8000"  # Gradio 기본 포트
     deploy:
       resources:
         reservations:
