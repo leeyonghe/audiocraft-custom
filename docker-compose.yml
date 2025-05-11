@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  audiocraft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace  # 현재 디렉토리를 컨테이너의 /workspace에 마운트
+      - ./dataset:/workspace/dataset  # 데이터셋 디렉토리 마운트
+    ports:
+      - "7860:7860"  # Gradio 기본 포트
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia  # NVIDIA GPU 사용 설정
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all  # 모든 GPU 사용 가능하도록 설정
+    command: bash -c "pip install -e . && python -m audiocraft.serve.api"  # 개발 모드로 설치 후 API 서버 실행 
