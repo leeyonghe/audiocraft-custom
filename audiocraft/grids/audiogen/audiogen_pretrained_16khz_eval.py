@@ -61,7 +61,7 @@ def explorer(launcher):
         return
 
     audiogen_base = launcher.bind(solver="audiogen/audiogen_base_16khz")
-    audiogen_base.bind_({'autocast': False, 'fsdp.use': True})
+    audiogen_base.bind_({'autocast': False, 'fsdp.use': True})    
 
     audiogen_base_medium = audiogen_base.bind({'continue_from': '//pretrained/facebook/audiogen-medium'})
     audiogen_base_medium.bind_({'model/lm/model_scale': 'medium'})
