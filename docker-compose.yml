@@ -20,4 +20,3 @@ services:
               capabilities: [gpu]
     environment:
       - NVIDIA_VISIBLE_DEVICES=all  # 모든 GPU 사용 가능하도록 설정
-    command: bash -c "pip install -e . && python -m audiocraft.serve.api"  # 개발 모드로 설치 후 API 서버 실행 

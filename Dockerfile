@@ -15,14 +15,11 @@ RUN apt-get update && apt-get install -y \
 RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-# requirements.txt 파일 복사
-COPY requirements.txt .
+# 애플리케이션 파일 복사
+COPY . .
 
 # Python 의존성 설치
 RUN pip install --no-cache-dir -r requirements.txt
-
-# 애플리케이션 파일 복사
-COPY . .
 
 # audiocraft 패키지 설치
 RUN pip install -e .
