@@ -9,7 +9,15 @@ AudioCraft의 모든 모델을 REST API로 제공하는 서비스입니다.
 pip install -r requirements.txt
 ```
 
-2. 서버 실행:
+2. Hugging Face 토큰 설정:
+   - https://huggingface.co/settings/tokens 에서 토큰을 발급받습니다.
+   - `.env` 파일을 생성하고 다음 내용을 입력합니다:
+   ```
+   HUGGING_FACE_HUB_TOKEN=your_token_here
+   PYTHONPATH=/workspace
+   ```
+
+3. 서버 실행:
 ```bash
 python main.py
 ```
